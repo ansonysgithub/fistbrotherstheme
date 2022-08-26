@@ -1,0 +1,168 @@
+/*
+Theme Name: Fist Brothers
+Theme URI: https://github.com/ansonysgithub/fistbrotherstheme
+Author: Ansony MS.
+Author URI: https://ansonys.com/
+Description: The theme used by FistBrothers.com for its content media strategy.
+Tags: marketing, videogames, news
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fistbrothers
+*/
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f8f9fa !important;
+}
+
+.main-container {
+    padding-bottom: 10em;
+}
+
+nav {
+    background-color: rgb(15, 52, 96);
+}
+
+.sub-nav h1 {
+    color: white;
+}
+
+.carousel-caption h2 {
+    background-color: rgb(15, 52, 96);
+    opacity: 0.9;
+    color: white;
+    padding: 25px;
+    font-weight: 200;
+}
+
+/* Carousel styles */
+
+.caroussel-caption {
+    background-color: #0F3460;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white !important;
+}
+
+.callouts {
+    margin-bottom: 10px;
+}
+
+.carousel, .lastests-news, .suscribe-form {
+    margin-bottom: 3.5rem;
+}
+
+.suscribe-form {
+    border: 5px black;
+}
+
+.jumbotron {
+    margin-top: 35px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+table tbody {
+    color: white;
+}
+
+.read-more{
+    margin-bottom: 15px;
+}
+
+.btn btn-default {
+    background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media-buttons a span {
+        display: none;
+    }
+}
+
+.btn-twitter {
+    background-color: #00abf1 !important;
+    color: white;
+}
+
+.btn-facebook {
+    background-color: #4267b2 !important;
+    color: white;
+}
+
+.btn-whatsapp {
+    background-color: #25d366 !important;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    color: white;
+}
+
+.social-media-buttons button {
+    margin-bottom: 15px;
+}
+
+.menu {
+    display: table;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    list-style: none;
+    float: left;
+    margin: 25px 25px;
+    text-align: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.sub-nav {
+    background-color: rgb(22, 33, 62);
+    overflow: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.sub-nav::-webkit-scrollbar{
+    display: none;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+footer p {
+    float: right;
+}
