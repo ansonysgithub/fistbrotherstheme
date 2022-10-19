@@ -96,44 +96,26 @@ $posts = new WP_Query($args);
 
         </div>
 
-        <!-- Suscriptions -->
         <div class="row">
             <div class="col-md-12">
-                <div class="suscribe-form">
-                    <h3 class="card-title text-left">Suscribe to Fist Brothers Media</h3>
-                    <form action="/Register/Create" method="post"><input name="__RequestVerificationToken" type="hidden" value="" />
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-md-4" for="Name">Name</label>
-                                <div class="col-md-10">
-                                    <input class="form-control text-box single-line" data-val="true" data-val-required="Debe ingresar un correo electrónico" id="Name" name="Name" type="text" value="">
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2" for="Email">Email</label>
-                                <div class="col-md-10">
-                                    <input class="form-control text-box single-line" data-val="true" data-val-required="Debe ingresar una contraseña" id="Email" name="Email" type="email" value="">
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" checked id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Receive updates about articules, game launches, promotions and more. <a href="www.fistbrothers.com/data-privacy" target="_blank">Learn
-                                                more about privacy.</a>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 social-media-buttons">
-                                <a class="btn btn-primary disabled">Register</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <h3>Suscribe to Fist Brothers Media</h3>
+            </div>
+            <div class="col-md-12 suscribe-form">
+                <form action="<?php echo get_template_directory_uri() . '/newsletter.php' ?>" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="checkbox" name="terms" id="terms" value="1">
+                        <label for="terms">Receive updates about articules, game launches, promotions and more. <a href="<?php the_privacy_policy_link() ?>">Learn more about privacy</a> </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" disabled>Register</button>
+                </form>
             </div>
         </div>
 
