@@ -112,7 +112,7 @@ $posts = new WP_Query($args);
                     </div>
                     <div class="form-group mb-3">
                         <input type="checkbox" name="terms" id="terms" value="1">
-                        <label for="terms">Receive updates about articules, game launches, promotions and more. <a href="<?php the_privacy_policy_link() ?>">Learn more about privacy</a> </label>
+                        <label for="terms">Receive updates about articules, game launches, promotions and more. <?php the_privacy_policy_link() ?> </label>
                     </div>
                     <button type="submit" class="btn btn-primary" disabled>Register</button>
                 </form>
