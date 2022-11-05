@@ -19,11 +19,7 @@
         </nav>
 
         <div class="text-center sub-nav">
-<<<<<<< HEAD
-            <div class="sub-menu">
-=======
             <div class="menu">
->>>>>>> development
                 <?php wp_nav_menu(
                     array(
                         "menu" => 'menu-principal'
