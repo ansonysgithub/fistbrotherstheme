@@ -60,9 +60,7 @@ $posts = new WP_Query($args);
 
     </div>
 
-    <div class="container">
-
-        <!-- Articules callouts -->
+    <div class="container" <!-- Articules callouts -->
         <div class="row lastests-news">
             <div class="col-md-12">
                 <h3>Top Articles</h3>
