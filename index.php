@@ -36,7 +36,7 @@ $posts = new WP_Query($args);
             ?>
 
                     <div class="carousel-item <?php echo ($active == 1) ? 'active first-slide' : '' ?>">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("medium_large", ['class' => 'img-fluid d-block w-100 responsive']); ?></a>
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full", ['class' => 'img-fluid d-block w-100 responsive']); ?></a>
                         <div class="container">
                             <div class="carousel-caption text-left">
                                 <h2><?php the_title(); ?></h2>
@@ -75,7 +75,7 @@ $posts = new WP_Query($args);
             ?>
                     <div class="callouts col-sm-12 col-md-4">
                         <div class="card">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("thumbnail", ['class' => 'card-img border-0']); ?></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("medium", ['class' => 'card-img border-0']); ?></a>
                             <div class="card-body">
                                 <h3><?php the_title(); ?></h3>
                                 <p class="card-text"><?php the_excerpt() ?></p>
