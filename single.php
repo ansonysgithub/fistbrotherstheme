@@ -4,7 +4,6 @@
         <div class="row">
             <div class="col-12">
                 <h1><?php the_title(); ?></h1>
-                <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
                 <?php the_content(); ?>
                 <hr />
             </div>

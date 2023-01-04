@@ -31,6 +31,10 @@ nav {
     color: white;
 }
 
+.main-title{
+    margin-top: 25px;
+}
+
 .carousel-caption h2 {
     background-color: rgb(15, 52, 96);
     opacity: 0.9;
