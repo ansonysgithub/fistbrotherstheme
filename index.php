@@ -69,7 +69,7 @@ $posts = new WP_Query($args);
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="main-title">Articles from our writters</h2>
+                <h1 class="main-title">Fist Brothers: Newer articles from our writes.</h1>
             </div>
             <div class="col-md-12">
                 <p>Here you can find the latest articles from Fist Brothers Media</p>
