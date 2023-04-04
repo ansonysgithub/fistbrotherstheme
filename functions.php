@@ -43,3 +43,5 @@ function fb_add_menus()
         )
     );
 }
+
+add_action("after_setup_theme","fb_add_menus");
