@@ -14,7 +14,7 @@ $posts = new WP_Query($args);
 ?>
 
 <div class="main-container">
-    <!-- Homepage carousel-->
+    <!-- Homepage carousel
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
         <ol class="carousel-indicators">
@@ -25,6 +25,7 @@ $posts = new WP_Query($args);
 
         <div class="carousel-inner">
             <?php
+            /*
             $active = 0;
 
             if ($slides->have_posts()) {
@@ -36,7 +37,9 @@ $posts = new WP_Query($args);
             ?>
 
                     <div class="carousel-item <?php echo ($active == 1) ? 'active first-slide' : '' ?>">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("medium_large", ['class' => 'img-fluid d-block w-100 responsive']); ?></a>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail("full", ['class' => 'd-block img-fluid w-100']); ?>
+                        </a>
                         <div class="container">
                             <div class="carousel-caption text-left">
                                 <h2><?php the_title(); ?></h2>
@@ -46,6 +49,7 @@ $posts = new WP_Query($args);
             <?php
                 }
             }
+            */
             ?>
         </div>
 
@@ -59,13 +63,19 @@ $posts = new WP_Query($args);
         </a>
 
     </div>
+    -->
 
-    <div class="container" <!-- Articules callouts -->
-        <div class="row lastests-news">
+    <!-- Fist Brothers Articles -->
+    <div class="container">
+        <div class="row">
             <div class="col-md-12">
-                <h3>Top Articles</h3>
+                <h1 class="main-title">Fist Brothers: Newer articles from our writes.</h1>
             </div>
-
+            <div class="col-md-12">
+                <p>Here you can find the latest articles from Fist Brothers Media</p>
+            </div>
+        </div>
+        <div class="row lastests-news">
             <?php
             if (have_posts()) {
 
@@ -94,6 +104,8 @@ $posts = new WP_Query($args);
 
         </div>
 
+        <!-- Fist Brothers Media Form -->
+        <!--
         <div class="row">
             <div class="col-md-12">
                 <h3>Suscribe to Fist Brothers Media</h3>
@@ -116,8 +128,10 @@ $posts = new WP_Query($args);
                 </form>
             </div>
         </div>
+        -->
 
         <!-- Fist Brothers TV -->
+        <!--
         <div class="row">
             <div class="col-md-6">
                 <h2>Fist Brothers TV</h2>
@@ -125,11 +139,12 @@ $posts = new WP_Query($args);
                 <a class="btn btn-outline-success read-more" href="http://www.youtube.com/channel/UCGYN6H0z2o2IGWY6PU88eVQ?sub_confirmation=1" target="_blank">Read more</a>
             </div>
             <div class="col-md-6">
-                <div class="embed-responsive embed-responsive-16by9">
+                <div class="embed-responsive embed-responsive-4by3">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NEo6K8_GBVY" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
+                    -->
     </div>
 </div>
 <?php get_footer() ?>
