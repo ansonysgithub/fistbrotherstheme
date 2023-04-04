@@ -105,6 +105,7 @@ $posts = new WP_Query($args);
         </div>
 
         <!-- Fist Brothers Media Form -->
+        <!--
         <div class="row">
             <div class="col-md-12">
                 <h3>Suscribe to Fist Brothers Media</h3>
@@ -127,8 +128,10 @@ $posts = new WP_Query($args);
                 </form>
             </div>
         </div>
+        -->
 
         <!-- Fist Brothers TV -->
+        <!--
         <div class="row">
             <div class="col-md-6">
                 <h2>Fist Brothers TV</h2>
@@ -141,6 +144,7 @@ $posts = new WP_Query($args);
                 </div>
             </div>
         </div>
+                    -->
     </div>
 </div>
 <?php get_footer() ?>
