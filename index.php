@@ -14,56 +14,6 @@ $posts = new WP_Query($args);
 ?>
 
 <div class="main-container">
-    <!-- Homepage carousel
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-        </ol>
-
-        <div class="carousel-inner">
-            <?php
-            /*
-            $active = 0;
-
-            if ($slides->have_posts()) {
-
-                while ($slides->have_posts()) {
-                    $slides->the_post();
-                    $active++;
-
-            ?>
-
-                    <div class="carousel-item <?php echo ($active == 1) ? 'active first-slide' : '' ?>">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail("full", ['class' => 'd-block img-fluid w-100']); ?>
-                        </a>
-                        <div class="container">
-                            <div class="carousel-caption text-left">
-                                <h2><?php the_title(); ?></h2>
-                            </div>
-                        </div>
-                    </div>
-            <?php
-                }
-            }
-            */
-            ?>
-        </div>
-
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-    </div>
-    -->
 
     <!-- Fist Brothers Articles -->
     <div class="container">
@@ -85,7 +35,7 @@ $posts = new WP_Query($args);
             ?>
                     <div class="callouts col-sm-12 col-md-4">
                         <div class="card">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("thumbnail", ['class' => 'card-img border-0']); ?></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("large", ['class' => 'card-img border-0']); ?></a>
                             <div class="card-body">
                                 <h3><?php the_title(); ?></h3>
                                 <p class="card-text"><?php the_excerpt() ?></p>
