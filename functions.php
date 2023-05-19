@@ -29,7 +29,23 @@ function fb_assets()
     wp_enqueue_script("smartslider-frontend", get_template_directory_uri() . "/src/js/smartslider-frontend.min.js");
     wp_enqueue_script("smartslider-simple-type-frontend", get_template_directory_uri() . "/src/js/smartslider-simple-type-frontend.min.js");
     wp_enqueue_script("nextend-webfontloader", get_template_directory_uri() . "/src/js/nextend-webfontloader.min.js");
+
+    wp_enqueue_script("slick", get_template_directory_uri() . "/src/js/slick.min.js");
+    wp_enqueue_script("flexmenu", get_template_directory_uri() . "/src/js/flexmenu.min.js");
+    wp_enqueue_script("jquery-matchHeight", get_template_directory_uri() . "/src/js/jquery.matchHeight.js");
+    wp_enqueue_script("muuri", get_template_directory_uri() . "/src/js/muuri.js");
+    wp_enqueue_script("jquery-vide", get_template_directory_uri() . "/src/js/jquery.vide.min.js");
+    wp_enqueue_script("jquery-paroller", get_template_directory_uri() . "/src/js/jquery.paroller.min.js");
+    wp_enqueue_script("video", get_template_directory_uri() . "/src/js/video.js");
+    wp_enqueue_script("jquery-inview", get_template_directory_uri() . "/src/js/jquery.inview.min.js");
+    wp_enqueue_script("progressbars", get_template_directory_uri() . "/src/js/progressbar.min.js");
+    wp_enqueue_script("lightbox", get_template_directory_uri() . "/src/js/lightbox.js");
+
     wp_enqueue_script("wow", get_template_directory_uri() . "/src/js/wow.min.js");
+
+    wp_enqueue_script("script", get_template_directory_uri() . "/src/js/script.js", array("jquery", "bootstrap"));
+
+    wp_localize_script('script', 'my_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
 add_action("wp_enqueue_scripts", "fb_assets");
@@ -63,3 +79,28 @@ function fb_add_menus()
 }
 
 add_action("after_setup_theme", "fb_add_menus");
+
+function custom_form_submission()
+{
+    if (isset($_POST['action']) && $_POST['action'] === 'custom_form_submission') {
+
+        $email = sanitize_email($_POST['email']);
+
+        $to = $email;
+        $subject = 'Fist Brothers Newsletter';
+        $body = "Thank you for subscribing to our newsletter. We will keep you updated with our latest news.";
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        wp_mail($to, $subject, $body, $headers);
+
+        $response = array(
+            'message' => 'Thank you for subscribing to our newsletter. We will keep you updated with our latest news.',
+            'status' => true
+        );
+
+        wp_send_json_success($response);
+    }
+}
+
+add_action('wp_ajax_custom_form_submission', 'custom_form_submission');
+add_action('wp_ajax_nopriv_custom_form_submission', 'custom_form_submission');

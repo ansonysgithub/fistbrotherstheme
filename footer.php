@@ -18,14 +18,19 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="2s">
-                <form action="#" class="reg-form">
+
+                <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" class="newsletter-form reg-form">
+                    <input type="hidden" name="action" value="custom_form_submission">
                     <div class="reg_input">
-                        <input type="text" placeholder="Enter your Email address here">
+                        <input type="text" placeholder="Enter your Email address here" name="email">
                     </div>
                     <button class="reg_submit">
                         <i class="fa fa-envelope color-1 fsize-14" aria-hidden="true"></i>
                     </button>
                 </form>
+
+                <div class="message wow fadeIn"></div>
+
             </div>
         </div>
     </div>
@@ -115,7 +120,6 @@
 <!-- FOOTER END -->
 
 <?php wp_footer(); ?>
-</div>
 
 <script>
     new WOW().init();
