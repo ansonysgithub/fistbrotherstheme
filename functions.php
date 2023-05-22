@@ -84,21 +84,40 @@ function custom_form_submission()
 {
     if (isset($_POST['action']) && $_POST['action'] === 'custom_form_submission') {
 
+        $errors = array();
+
         $email = sanitize_email($_POST['email']);
 
-        $to = $email;
-        $subject = 'Fist Brothers Newsletter';
-        $body = "Thank you for subscribing to our newsletter. We will keep you updated with our latest news.";
-        $headers = array('Content-Type: text/html; charset=UTF-8');
+        if (empty($email)) {
+            $errors['email'] = 'Email is required';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Email is not valid';
+        }
 
-        wp_mail($to, $subject, $body, $headers);
+        if (empty($errors)) {
 
-        $response = array(
-            'message' => 'Thank you for subscribing to our newsletter. We will keep you updated with our latest news.',
-            'status' => true
-        );
+            $to = $email;
+            $subject = 'Fist Brothers Newsletter';
+            $body = "Thank you for subscribing to our newsletter. We will keep you updated with our latest news.";
+            $headers = array('Content-Type: text/html; charset=UTF-8');
 
-        wp_send_json_success($response);
+            wp_mail($to, $subject, $body, $headers);
+
+            $response = array(
+                'message' => 'Thank you for subscribing to our newsletter. We will keep you updated with our latest news.',
+                'status' => true
+            );
+
+            wp_send_json_success($response, 200);
+        } else {
+            $response = array(
+                'message' => 'Please fill in the required fields',
+                'status' => false,
+                'errors' => $errors
+            );
+
+            wp_send_json_error($response, 422);
+        }
     }
 }
 
