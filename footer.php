@@ -9,7 +9,7 @@
                             Register for our Newsletter now
                         </div>
                         <div class="subtitle">
-                            Newslatter
+                            Newsletter
                         </div>
                     </div>
                     <div class="color-white">
@@ -45,70 +45,22 @@
 
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-right">
-                <ul class="footer-menu">
-                    <li class="active">
-                        <a href="index.html" tppabs="http://denysthemes.com/demos/html/indiega/pages/index.html">
-                            Homepage
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Pages
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gallery-masonry.html" tppabs="http://denysthemes.com/demos/html/indiega/pages/gallery-masonry.html">
-                            Gallery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="games.html" tppabs="http://denysthemes.com/demos/html/indiega/pages/games.html">
-                            Games
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog-right.html" tppabs="http://denysthemes.com/demos/html/indiega/pages/blog-right.html">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contacts.html" tppabs="http://denysthemes.com/demos/html/indiega/pages/contacts.html">
-                            Contacts
-                        </a>
-                    </li>
-                </ul>
+                <?php wp_nav_menu(
+                    array(
+                        "menu_class" => 'footer-menu'
+                    )
+                ); ?>
+
+
                 <div class="mt60">
-                    Andouille landjaeger flank boudin. Jerky cupim alcatra sirloin porchetta,
-                    <br /> turkey short ribs leberkas doner bacon pancetta buffalo.
-                </div>
-                <div class="social-content mt30">
-                    <div class="social-list">
-                        <a href="#">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="social-list">
-                        <a href="#">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="social-list">
-                        <a href="#">
-                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="social-list">
-                        <a href="#">
-                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                    In Costa Rica, video games are becoming more popular for people of any age. With the rise of digital stores, gamers can now access the latest releases from their own homes.
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="copyright ptb30 col-lg-12">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    © Copyright 2018
+                    © Copyright 2023
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
                     All Rights Reserved

@@ -1,23 +1,32 @@
 <?php get_header() ?>
 
 <?php
-$args = array(
-    "post_type" => array("post"),
-);
-$slides = new WP_Query($args);
 
-$args = array(
-    "post_type" => array("post"),
-);
+$args = array();
+
+if (is_category()) {
+    $category = get_queried_object();
+    $category_id = $category->term_id;
+    
+    $args = array(
+        "post_type" => array("post"),
+        "cat" => $category_id
+    );
+} else {
+    $args = array(
+        "post_type" => array("post"),
+    );
+}
+
 $posts = new WP_Query($args);
+
 ?>
 
-<!-- Slider Start -->
 <section class="main-slider">
     <div id="n2-ss-4-align" class="n2-ss-align">
         <div class="n2-padding">
             <div id="n2-ss-4" data-creator="Smart Slider 3" class="n2-ss-slider n2-ow n2-has-hover n2notransition n2-ss-load-fade " data-minFontSizedesktopPortrait="1" data-minFontSizedesktopLandscape="1" data-minFontSizetabletPortrait="1" data-minFontSizetabletLandscape="1" data-minFontSizemobilePortrait="1" data-minFontSizemobileLandscape="1" style="font-size: 16px;" data-fontsize="16">
-                <div class="n2-ss-slider-1 n2-ss-swipe-element n2-ow" style="">
+                <div class="n2-ss-slider-1 n2-ss-swipe-element n2-ow">
                     <div class="n2-ss-slider-2 n2-ow">
                         <div class="n2-ss-slider-3 n2-ow">
                             <div class="n2-ss-slide-backgrounds"></div>
@@ -35,7 +44,13 @@ $posts = new WP_Query($args);
                                             <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content" data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit" data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100" data-plugin="rendered">
                                                 <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
                                                     <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
-                                                        <div id="n2-ss-4item1" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;"><?php the_category() ?></div>
+                                                        <div id="n2-ss-4item1" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">
+                                                            <?php
+
+                                                            the_category()
+
+                                                            ?>
+                                                        </div>
                                                     </div>
 
                                                     <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
@@ -273,11 +288,8 @@ $posts = new WP_Query($args);
         <img style="width: 100%; max-width:3000px; display: block;" class="n2-ow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiA+PC9zdmc+" alt="Slider" />
     </div>
 </section>
-<!-- SLIDER END -->
 
-<!-- BLOG SECTION START -->
 <section class="blog-section pt150 pb85">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -295,7 +307,7 @@ $posts = new WP_Query($args);
             </div>
         </div>
     </div>
-    
+
     <div class="bg-wrapper each-element mt90 clearfix">
         <div class="container">
             <div class="row">
@@ -356,6 +368,5 @@ $posts = new WP_Query($args);
         </div>
     </div>
 </section>
-<!-- BLOG SECTION END -->
 
 <?php get_footer(); ?>
