@@ -13,6 +13,7 @@ function fb_assets()
     wp_register_script("popper", "https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js");
 
     wp_enqueue_script("javascript", get_template_directory_uri() . "/src/js/script.js", array("jquery", "bootstrap", "popper"));
+    wp_enqueue_script("formValidation", get_template_directory_uri() . "/src/js/formValidation.js");
 
     wp_localize_script('javascript', 'ajax_register', array('ajax_url' => admin_url('admin-ajax.php')));
 }

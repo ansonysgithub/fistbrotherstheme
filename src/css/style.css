@@ -21,7 +21,7 @@ Text Domain: fistbrothers
 }
 
 .main-container {
-    padding-bottom: 10em;
+    padding-bottom: 15em;
 }
 
 nav {
@@ -161,11 +161,36 @@ footer {
     position: absolute;
     width: 100%;
     bottom: 0;
-    background-color: black;
     color: white;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
+}
+
+.footer-nav {
+    background-color: rgb(22, 33, 62);
+}
+
+.footer-copy {
+    background-color: rgb(15, 52, 96);
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    list-style: none;
+    float: left;
+    margin: 25px 25px;
+    text-align: center;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 footer p {
-    float: right;
+    text-align: center;
+    margin: 25px;
 }

@@ -121,12 +121,11 @@ $posts = new WP_Query($args);
                 ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Suscribe to Fist Brothers Media</h3>
-            </div>
-            <div class="col-md-12 suscribe-form">
-                <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" class="newsletter-form">
+        <hr>
+        <div class="row" id="register">
+            <div class="col-md-6">
+                <h4>Register for our newsletter now</h4>
+                <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" class="newsletter-form needs-validation">
                     <input type="hidden" name="action" value="suscribe_form">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -138,11 +137,18 @@ $posts = new WP_Query($args);
                     </div>
                     <div class="form-group mb-3">
                         <input type="checkbox" name="terms" id="terms" value="1" required>
-                        <label for="terms">Yes, I agree to our <?php the_privacy_policy_link() ?>. </label>
+                        <label for="terms">I agree to provide my data and consent to this website's <?php the_privacy_policy_link() ?>.</label>
                     </div>
                     <div class="validations"></div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
                 </form>
+            </div>
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <p class="lead">Subscribe to our newsletter now and stay informed! Get updates on the latest trends, discounts, and content. Don't miss out - sign up today!</p>
+                    <hr class="my-4">
+                    <p>We respect your privacy. Learn how we use and protect your data by reading our <?php the_privacy_policy_link() ?>.</p>
+                </div>
             </div>
         </div>
     </div>

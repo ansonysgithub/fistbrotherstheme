@@ -15,6 +15,9 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand text-white" href="<?php echo home_url(); ?>">Fist Brothers</a>
+                <a href="#register">
+                    <button class="btn btn-outline-light">Join Now</button>
+                </a>
             </div>
         </nav>
 
