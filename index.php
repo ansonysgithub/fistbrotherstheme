@@ -121,7 +121,7 @@ $posts = new WP_Query($args);
                 ?>
             </div>
         </div>
-        <hr>
+
         <div class="row" id="register">
             <div class="col-md-6">
                 <h4>Register for our newsletter now</h4>

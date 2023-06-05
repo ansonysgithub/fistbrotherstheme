@@ -38,6 +38,13 @@ function fb_theme_supports()
 
 add_action("after_setup_theme", "fb_theme_supports");
 
+function fb_callout_images()
+{
+    add_image_size("callout", 200, 200, true);
+}
+
+add_action("after_setup_theme", "fb_callout_images");
+
 function fb_add_menus()
 {
     register_nav_menus(
