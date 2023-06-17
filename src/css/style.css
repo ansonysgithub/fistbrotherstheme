@@ -121,6 +121,15 @@ table tbody {
     color: white;
 }
 
+.content h1 {
+    margin-top: 25px;
+}
+
+.blockquote p {
+    position: relative;
+    z-index: 1;
+}
+
 .social-media-buttons button {
     margin-bottom: 15px;
 }
@@ -156,7 +165,8 @@ table tbody {
 .sub-nav::-webkit-scrollbar {
     display: none;
 }
-.author{
+
+.author {
     margin-bottom: 35px;
 }
 

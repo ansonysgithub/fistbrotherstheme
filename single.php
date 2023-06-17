@@ -28,7 +28,7 @@ $author_display_name = get_the_author_meta('display_name', $post_author_id);
                         </svg>
                         <span>Share on Twitter</span>
                     </a>
-                    <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?&text=<?php the_permalink(); ?>">
+                    <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?&text=<?php the_permalink(); ?>" target="_blank">
                         <i class="fa fa-whatsapp" aria-hidden="true"></i>
                         <span>Share on WhatsApp</span>
                     </a>
@@ -39,7 +39,7 @@ $author_display_name = get_the_author_meta('display_name', $post_author_id);
         <div class="row author">
             <div class="col-md-12">
                 <blockquote class="blockquote text-center">
-                    <p class="mb-0">Posted on: <?php echo $post_date; ?> in <?php the_category(', '); ?>.</p>
+                    <p class="mb-0">Posted on: <?php echo $post_date; ?> <?php the_tags('in ', ', '); ?>.</p>
                     <footer class="blockquote-footer">by <cite title="Source Title"><?php echo $author_display_name; ?></cite></footer>
                 </blockquote>
             </div>
